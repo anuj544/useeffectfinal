@@ -1,24 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 function App() {
+  const[num1,setnum1]=useState(0);
+  const[num2,setnum2]=useState(0);
+
+  useEffect(()=>{
+    alert('I was clicked')
+  },[num1]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+    <button onClick={()=>setnum1(num1+1)}>click me{num1}</button>
+    <button onClick={()=>setnum2(num2+1)}>click me{num2}</button>
+   </>
   );
 }
 
